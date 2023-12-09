@@ -5,16 +5,9 @@ import model.Solvable;
 
 import java.util.List;
 
-public class Day01 extends Puzzle implements Solvable {
+public class Day01_01 extends Puzzle {
 
-    private List<String> input;
-
-    public Day01(String filePath) {
-        super(filePath);
-        input = getPuzzleInput();
-    }
-
-    public <R> R solve() {
+    public <R> R solve(List<String> input) {
         int sum = 0;
 
         for (String line : input) {
