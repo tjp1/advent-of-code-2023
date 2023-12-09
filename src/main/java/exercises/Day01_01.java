@@ -7,6 +7,7 @@ import java.util.List;
 
 public class Day01_01 extends Puzzle {
 
+    @Override
     public <R> R solve(List<String> input) {
         int sum = 0;
 

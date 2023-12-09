@@ -9,6 +9,7 @@ import java.util.Map;
 
 public class Day01_02 extends Puzzle {
 
+    @Override
     public <R> R solve(List<String> input) {
         int sum = 0;
 
