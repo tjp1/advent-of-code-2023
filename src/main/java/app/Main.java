@@ -11,10 +11,10 @@ import java.util.List;
 // then press Enter. You can now see whitespace characters in your code.
 public class Main {
     public static void main(String[] args) {
-        String filePath = "/puzzle-input/input-day-01.txt";
+        String filePath = "/puzzle-input/input-day-02.txt";
         List<String> input = Utils.readLines(filePath);
 
-        Puzzle puzzle = new Day01_02();
+        Puzzle puzzle = new Day02_01();
         Integer solution = puzzle.solve(input);
         System.out.println(solution.intValue());
     }

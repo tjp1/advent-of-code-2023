@@ -37,7 +37,47 @@ public class Day02_01Test {
     public void testFirstLine() {
         List<String> input = Utils.readLines("/test-input/day02/part01/test-input-day-02-part-01-01.txt");
 
-        final int EXPECTED_SOLUTION = 12;
+        final int EXPECTED_SOLUTION = 1;
+        int actualSolution = ((Integer) PUZZLE.solve(input)).intValue();
+
+        assertEquals(EXPECTED_SOLUTION, actualSolution, String.format("Expected: %d but received %d", EXPECTED_SOLUTION, actualSolution));
+    }
+
+    @Test
+    public void testSecondLine() {
+        List<String> input = Utils.readLines("/test-input/day02/part01/test-input-day-02-part-01-02.txt");
+
+        final int EXPECTED_SOLUTION = 2;
+        int actualSolution = ((Integer) PUZZLE.solve(input)).intValue();
+
+        assertEquals(EXPECTED_SOLUTION, actualSolution, String.format("Expected: %d but received %d", EXPECTED_SOLUTION, actualSolution));
+    }
+
+    @Test
+    public void testThirdLine() {
+        List<String> input = Utils.readLines("/test-input/day02/part01/test-input-day-02-part-01-03.txt");
+
+        final int EXPECTED_SOLUTION = 0;
+        int actualSolution = ((Integer) PUZZLE.solve(input)).intValue();
+
+        assertEquals(EXPECTED_SOLUTION, actualSolution, String.format("Expected: %d but received %d", EXPECTED_SOLUTION, actualSolution));
+    }
+
+    @Test
+    public void testFourthLine() {
+        List<String> input = Utils.readLines("/test-input/day02/part01/test-input-day-02-part-01-04.txt");
+
+        final int EXPECTED_SOLUTION = 0;
+        int actualSolution = ((Integer) PUZZLE.solve(input)).intValue();
+
+        assertEquals(EXPECTED_SOLUTION, actualSolution, String.format("Expected: %d but received %d", EXPECTED_SOLUTION, actualSolution));
+    }
+
+    @Test
+    public void testFifthLine() {
+        List<String> input = Utils.readLines("/test-input/day02/part01/test-input-day-02-part-01-05.txt");
+
+        final int EXPECTED_SOLUTION = 5;
         int actualSolution = ((Integer) PUZZLE.solve(input)).intValue();
 
         assertEquals(EXPECTED_SOLUTION, actualSolution, String.format("Expected: %d but received %d", EXPECTED_SOLUTION, actualSolution));
