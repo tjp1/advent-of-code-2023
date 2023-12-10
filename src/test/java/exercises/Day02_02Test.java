@@ -8,9 +8,9 @@ import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
-public class Day02_01Test {
+public class Day02_02Test {
 
-    private static Puzzle PUZZLE = new Day02_01();
+    private static Puzzle PUZZLE = new Day02_02();
 
     @Test
     public void testAdHoc() {
@@ -25,9 +25,9 @@ public class Day02_01Test {
 
     @Test
     public void testFullExample() {
-        List<String> input = Utils.readLines("/test-input/day02/part01/test-input-day-02-part-01-full.txt");
+        List<String> input = Utils.readLines("/test-input/day02/part02/test-input-day-02-part-02-full.txt");
 
-        final int EXPECTED_SOLUTION = 8;
+        final int EXPECTED_SOLUTION = 2286;
         int actualSolution = ((Integer) PUZZLE.solve(input)).intValue();
 
         assertEquals(EXPECTED_SOLUTION, actualSolution, String.format("Expected: %d but received %d", EXPECTED_SOLUTION, actualSolution));
@@ -35,9 +35,9 @@ public class Day02_01Test {
 
     @Test
     public void testFirstLine() {
-        List<String> input = Utils.readLines("/test-input/day02/part01/test-input-day-02-part-01-01.txt");
+        List<String> input = Utils.readLines("/test-input/day02/part02/test-input-day-02-part-02-01.txt");
 
-        final int EXPECTED_SOLUTION = 1;
+        final int EXPECTED_SOLUTION = 48;
         int actualSolution = ((Integer) PUZZLE.solve(input)).intValue();
 
         assertEquals(EXPECTED_SOLUTION, actualSolution, String.format("Expected: %d but received %d", EXPECTED_SOLUTION, actualSolution));
@@ -45,9 +45,9 @@ public class Day02_01Test {
 
     @Test
     public void testSecondLine() {
-        List<String> input = Utils.readLines("/test-input/day02/part01/test-input-day-02-part-01-02.txt");
+        List<String> input = Utils.readLines("/test-input/day02/part02/test-input-day-02-part-02-02.txt");
 
-        final int EXPECTED_SOLUTION = 2;
+        final int EXPECTED_SOLUTION = 12;
         int actualSolution = ((Integer) PUZZLE.solve(input)).intValue();
 
         assertEquals(EXPECTED_SOLUTION, actualSolution, String.format("Expected: %d but received %d", EXPECTED_SOLUTION, actualSolution));
@@ -55,9 +55,9 @@ public class Day02_01Test {
 
     @Test
     public void testThirdLine() {
-        List<String> input = Utils.readLines("/test-input/day02/part01/test-input-day-02-part-01-03.txt");
+        List<String> input = Utils.readLines("/test-input/day02/part02/test-input-day-02-part-02-03.txt");
 
-        final int EXPECTED_SOLUTION = 0;
+        final int EXPECTED_SOLUTION = 1560;
         int actualSolution = ((Integer) PUZZLE.solve(input)).intValue();
 
         assertEquals(EXPECTED_SOLUTION, actualSolution, String.format("Expected: %d but received %d", EXPECTED_SOLUTION, actualSolution));
@@ -65,9 +65,9 @@ public class Day02_01Test {
 
     @Test
     public void testFourthLine() {
-        List<String> input = Utils.readLines("/test-input/day02/part01/test-input-day-02-part-01-04.txt");
+        List<String> input = Utils.readLines("/test-input/day02/part02/test-input-day-02-part-02-04.txt");
 
-        final int EXPECTED_SOLUTION = 0;
+        final int EXPECTED_SOLUTION = 630;
         int actualSolution = ((Integer) PUZZLE.solve(input)).intValue();
 
         assertEquals(EXPECTED_SOLUTION, actualSolution, String.format("Expected: %d but received %d", EXPECTED_SOLUTION, actualSolution));
@@ -75,9 +75,9 @@ public class Day02_01Test {
 
     @Test
     public void testFifthLine() {
-        List<String> input = Utils.readLines("/test-input/day02/part01/test-input-day-02-part-01-05.txt");
+        List<String> input = Utils.readLines("/test-input/day02/part02/test-input-day-02-part-02-05.txt");
 
-        final int EXPECTED_SOLUTION = 5;
+        final int EXPECTED_SOLUTION = 36;
         int actualSolution = ((Integer) PUZZLE.solve(input)).intValue();
 
         assertEquals(EXPECTED_SOLUTION, actualSolution, String.format("Expected: %d but received %d", EXPECTED_SOLUTION, actualSolution));
