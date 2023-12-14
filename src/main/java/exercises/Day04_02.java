@@ -12,6 +12,7 @@ public class Day04_02 extends Puzzle {
     public <R> R solve(List<String> input) {
         int sum = 0;
         int scratchCardTotal = 0;
+        int totalGames = input.size();
         Queue<Integer> queue = new LinkedList<>();
         Map<Integer, Integer> winCounts = new HashMap<>();
 
@@ -34,7 +35,7 @@ public class Day04_02 extends Puzzle {
             if (checkSet.size() > 0) {
                 winCounts.put(gameNumber, checkSet.size());
 
-                addNumsToQueue(queue, gameNumber, gameNumber + checkSet.size());
+                addNumsToQueue(queue, gameNumber + 1, Math.min(gameNumber + checkSet.size(), totalGames));
                 scratchCardTotal++;
             }
         }
@@ -46,7 +47,7 @@ public class Day04_02 extends Puzzle {
 
             // For winning game X with Y matching numbers, add Y number of subsequent cards
             if (popped != null && winCounts.containsKey(popped)) {
-                addNumsToQueue(queue, winningCardNum + 1, winningCardNum + winCounts.get(winningCardNum));
+                addNumsToQueue(queue, winningCardNum + 1, Math.min(winningCardNum + winCounts.get(winningCardNum), totalGames));
                 scratchCardTotal++;
             }
         }
