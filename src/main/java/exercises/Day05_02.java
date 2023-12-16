@@ -9,6 +9,8 @@ public class Day05_02 extends Puzzle {
     @Override
     public <R> R solve(List<String> input) {
         List<Long> seedValues = readSeeds(input.get(0));
+        // Can't brute force this; lots of good solutions here: https://www.reddit.com/r/adventofcode/comments/18b4b0r/2023_day_5_solutions/
+        // ex: zuleyorker, steven-terrana
         List<List<Long>> seeds = expandRanges(seedValues);
 
         Iterator<String> iterator = input.listIterator();
@@ -46,8 +48,6 @@ public class Day05_02 extends Puzzle {
 
         maps.add(mapInput);
 
-        // Finished reading numbers for a map, now run them through map
-        // TODO: refactor this to iterate over ranges
         for (int i = 0; i < seeds.size(); i++) {
             List<Long> row = seeds.get(i);
             for (int j = 0; j < row.size(); j++) {
