@@ -14,8 +14,8 @@ public class Main {
         String filePath = "/puzzle-input/input-day-06.txt";
         List<String> input = Utils.readLines(filePath);
 
-        Puzzle puzzle = new Day06_01();
-        Integer solution = puzzle.solve(input);
+        Puzzle puzzle = new Day06_02();
+        Long solution = puzzle.solve(input);
         System.out.println(solution.intValue());
     }
 
