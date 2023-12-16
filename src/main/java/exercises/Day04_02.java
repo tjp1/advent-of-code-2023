@@ -11,7 +11,6 @@ public class Day04_02 extends Puzzle {
     @Override
     public <R> R solve(List<String> input) {
         int sum = 0;
-        int scratchCardTotal = 0;
         Queue<Integer> queue = new LinkedList<>();
         Map<Integer, Integer> winCounts = new HashMap<>();
 
@@ -28,30 +27,37 @@ public class Day04_02 extends Puzzle {
 
             Set<Integer> winningNumbers = parseNumbers(winningNumbersString);
             Set<Integer> chosenNumbers = parseNumbers(chosenNumbersString);
-            Set<Integer> checkSet = new HashSet<>(chosenNumbers);
-            checkSet.retainAll(winningNumbers);
 
-            if (checkSet.size() > 0) {
-                winCounts.put(gameNumber, checkSet.size());
+            // count number of matching numbers in this card
+            Set<Integer> numMatches = new HashSet<>(chosenNumbers);
+            numMatches.retainAll(winningNumbers);
 
-                addNumsToQueue(queue, gameNumber, gameNumber + checkSet.size());
-                scratchCardTotal++;
+            // For winning game X with Y matching numbers, add Y number of subsequent cards
+            if (numMatches.size() > 0) {
+                winCounts.put(gameNumber, numMatches.size());
+                addNumsToQueue(queue, gameNumber + 1, gameNumber + numMatches.size());
             }
         }
 
         // process nums in queue
         while (!queue.isEmpty()) {
             Integer popped = queue.poll();
-            int winningCardNum = popped.intValue();
+            int gameNumber = popped.intValue();
+
+            // count every card that is dequeued
+            sum++;
 
             // For winning game X with Y matching numbers, add Y number of subsequent cards
             if (popped != null && winCounts.containsKey(popped)) {
-                addNumsToQueue(queue, winningCardNum + 1, winningCardNum + winCounts.get(winningCardNum));
-                scratchCardTotal++;
+                int numMatches = winCounts.get(popped);
+                addNumsToQueue(queue, gameNumber + 1, gameNumber + numMatches);
             }
         }
 
-        return (R) Integer.valueOf(scratchCardTotal);
+        // every card in input is counted at least once
+        sum += input.size();
+
+        return (R) Integer.valueOf(sum);
     }
 
     private void addNumsToQueue(Queue<Integer> queue, int start, int stop) {

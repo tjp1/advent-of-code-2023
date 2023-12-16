@@ -15,11 +15,12 @@ public class Day04_02Test {
 
     @Test
     public void testAdHoc() {
-        String line1 = "Card  10: 70 13 57 30 27 31 12 29 82 38 | 28 44 43 82 71 15 14 74 38 72 26 83 29 96 30 77 66 27 51  9 84 68 57 64 32";
-        List<String> input = new ArrayList<>();
-        input.add(line1);
+        String line1 = "Card   1:  4 33 89 61 95 36  5 30 26 55 | 15 33 28 36 93 57 26 13 95  4 18 79  6 87 60 66 69 67 19 42 22 61 78  5 58";
 
-        final int EXPECTED_SOLUTION = 0;
+        List<String> input = new ArrayList<>();
+        input.add(line1); // 1 + 7
+
+        final int EXPECTED_SOLUTION = 8;
         int actualSolution = ((Integer) PUZZLE.solve(input)).intValue();
 
         assertEquals(EXPECTED_SOLUTION, actualSolution, String.format("Expected: %d but received %d", EXPECTED_SOLUTION, actualSolution));
